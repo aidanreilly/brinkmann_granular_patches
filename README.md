@@ -1,4 +1,4 @@
-#8 pd patches for Martin Brinkmann granular synth, pisound, midi controller
+# 8 pd patches for Martin Brinkmann granular synth, Autmationism, pisound, midi controller
 
 * *First*
 * *Second*
@@ -9,4 +9,4 @@
 * *Seventh*
 * *Eighth*
 
-Original patch by Martin Brinkmann: http://www.martin-brinkmann.de/pd-patches.html Thank you Martin.
+Original granular patch by Martin Brinkmann: http://www.martin-brinkmann.de/pd-patches.html Thank you Martin.
