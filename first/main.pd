@@ -1201,7 +1201,6 @@
 #X restore 30 404 pd open-chord-synth;
 #X restore 21 206 pd oscillators;
 #X obj 189 107 loadbang;
-#X msg 189 150 \; pd-modules vis 1;
 #N canvas 0 23 491 574 sound-processors 0;
 #N canvas 0 22 473 595 open-hp-filter 0;
 #X msg 64 84 bang;
@@ -1488,7 +1487,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 1 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1920,7 +1919,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 1 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2352,7 +2351,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 2 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2460,7 +2459,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 1 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2514,7 +2513,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 1 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5178,7 +5177,7 @@ more elaborate pd-code for deeper control.;
 #X obj 204 151 r open-organelle-map!;
 #X msg 204 198 \; pd-organelle-map vis \$1;
 #X obj 203 272 r open-modules!;
-#N canvas 549 23 799 729 modules 0;
+#N canvas -8 -8 1366 685 modules 0;
 #X obj 196 91 cnv 15 180 15 empty empty MODULATION: 10 8 0 12 -158136
 -262144 0;
 #X obj 196 112 bng 15 250 50 0 \$0-create-basic-lfo! empty <--BASIC-LFO
@@ -5543,7 +5542,7 @@ to start over at zero. PRESS THE BUTTON BELOW TO RESET:;
 #X msg 601 193 \; pd-reset-warning vis 0;
 #X obj 601 139 delay 500;
 #X msg 604 289 1;
-#N canvas -8 -8 1366 685 external-msg 1;
+#N canvas -8 -8 1366 685 external-msg 0;
 #X obj 17 12 cnv 15 400 60 empty empty EXTERNAL_MESSAGES 20 12 0 14
 -226533 -262144 0;
 #X text 27 86 You can send external control messages into Automatonism
@@ -6086,7 +6085,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 1 256;
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -6585,17 +6584,17 @@ and send to the name of the module \, for example [s basic-osc];
 #X connect 22 0 9 0;
 #X restore 20 147 pd open-random-time-manager;
 #X restore 22 405 pd macro-structural-tools;
+#X msg 189 150 \; pd-modules vis 1;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
-#X connect 3 1 23 0;
+#X connect 3 1 22 0;
 #X connect 5 0 7 0;
 #X connect 7 0 6 0;
-#X connect 9 0 22 0;
+#X connect 9 0 21 0;
+#X connect 17 0 16 0;
 #X connect 18 0 17 0;
-#X connect 19 0 18 0;
-#X connect 22 0 10 0;
-#X connect 23 0 4 0;
+#X connect 22 0 4 0;
 #X restore 25 613 pd patch-editor-do-not-delete;
 #X text 37 576 DO NOT DELETE THESE OBJECTS:;
 #X obj 7 2 cnv 5 5 5 empty empty AUTOMATONISM 0 12 0 15 -262144 -66577
@@ -6621,7 +6620,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj 18 271 t f;
 #X obj 16 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 35 187 button 2 gate;
+#X text 59 191 button 2 gate;
 #X obj 146 80 sig~;
 #X obj 146 108 lop~ 10;
 #X obj 144 58 / 127;
@@ -6777,11 +6776,12 @@ and send to the name of the module \, for example [s basic-osc];
 #X msg 493 208 read -resize \$1 \$2;
 #X obj 504 129 t b a;
 #X obj 495 184 pack s s;
-#X msg 496 156 symbol samples/sample7.wav;
+#X msg 496 156 symbol samples/sample1.wav;
+#X obj 411 104 route \$2;
 #X connect 0 0 67 0;
 #X connect 0 0 96 2;
-#X connect 1 0 12 0;
 #X connect 1 0 104 0;
+#X connect 1 0 111 0;
 #X connect 5 0 12 0;
 #X connect 5 0 104 0;
 #X connect 6 0 5 0;
@@ -6936,6 +6936,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X connect 109 0 107 0;
 #X connect 110 0 109 0;
 #X connect 110 0 12 0;
+#X connect 111 0 12 0;
 #X coords 0 -1 1 1 209 170 1 100 100;
 #X restore 445 253 pd granulator2;
 #X floatatom 546 218 5 0 0 0 - - -;
@@ -7738,7 +7739,7 @@ time 1..128 (for example 1/16 steps);
 -1 2500 1;
 #X text 714 13 <-bpm;
 #X obj 108 200 hsl 175 8 0 15 0 0 empty empty empty -2 -6 0 8 -262144
--258699 -1 12760 1;
+-258699 -1 3480 1;
 #X obj 291 106 vsl 8 90 0 1 0 1 empty empty gl 0 100 1 8 -262144 -1
 -1 1000 1;
 #X obj 104 121 vsl 8 73 -1 1 0 1 empty empty empty 0 -8 0 8 -262144
@@ -7846,7 +7847,7 @@ time 1..128 (for example 1/16 steps);
 #X obj 249 102 nbx 3 14 2 16 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 15.2913 256;
 #X obj 201 105 hsl 40 8 -30 30 0 0 empty empty lfo -24 5 0 10 -262144
--1 -1 2006 1;
+-1 -1 1334 1;
 #N canvas 705 79 1076 1000 lopass2p2zm 0;
 #X obj -222 90 inlet~;
 #X obj 133 939 outlet~;
@@ -11202,7 +11203,7 @@ hp-filter;
 #X obj 768 359 scale 0 127 0 15;
 #X text 1123 27 pd seq thing;
 #X text 846 94 position, f 16;
-#X obj 214 108 midi-in 1;
+#X obj 219 98 midi-in 1;
 #X text 457 21 seq;
 #X text 406 131 seq d/w;
 #X text 597 158 LPF;
