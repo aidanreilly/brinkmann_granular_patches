@@ -80,7 +80,7 @@
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 0 256;
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3652,7 +3652,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 0 256;
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4191,7 +4191,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 0 256;
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -6083,7 +6083,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
-10 -262144 -1 -1 0 256;
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -6608,16 +6608,16 @@ and send to the name of the module \, for example [s basic-osc];
 #X floatatom 8 146 5 0 0 1 CPU% CPU -;
 #X obj 8 105 bng 15 250 50 0 open-reset-warning! empty <--RESET! 17
 7 0 10 -262144 -1 -1;
-#X obj 219 76 loadbang;
+#X obj 233 84 loadbang;
 #N canvas 73 80 1280 729 granulator2 0;
 #X obj 105 166 hsl 200 15 0 1 0 1 empty empty position 2 7 0 10 -262144
--1 -1 4515 1;
+-1 -1 17472 1;
 #X obj 505 29 inlet;
 #X text 503 12 filename;
 #X obj 201 647 outlet~;
 #X obj 302 649 outlet~;
 #X obj 105 132 hsl 200 15 0 1 0 1 empty empty rate 2 7 0 10 -262144
--1 -1 4400 1;
+-1 -1 3700 1;
 #X obj -172 354 t f f;
 #X obj -184 381 *;
 #X obj -198 412 t b f;
@@ -6626,17 +6626,17 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj -197 518 * 1000;
 #X obj -206 552 clip 1 1000;
 #X obj 105 200 hsl 200 15 0 1 0 1 empty empty len 2 7 0 10 -262144
--1 -1 2423 1;
+-1 -1 2123 1;
 #X obj 105 218 hsl 200 10 0 1 0 1 empty empty len_rnd 2 5 0 10 -262144
 -1 -1 4490 1;
 #X obj 111 233 nbx 3 14 -36 36 0 1 empty empty p -8 7 0 10 -262144
--1 -1 0 256;
+-1 -1 -5 256;
 #X obj 153 233 hsl 80 15 0 1 0 1 empty empty pitch_rnd 2 7 0 10 -262144
 -1 -1 0 1;
 #X obj 241 233 hsl 64 15 0 1 0 1 empty empty pan_rnd 2 7 0 10 -262144
--1 -1 2900 1;
+-1 -1 2600 1;
 #X obj 105 184 hsl 200 10 0 1 0 1 empty empty position_rnd 2 5 0 10
--262144 -1 -1 3400 1;
+-262144 -1 -1 2800 1;
 #X obj -264 542 delay 10;
 #X obj -121 383 t f f;
 #X obj -119 407 *;
@@ -6653,7 +6653,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X text -315 218 metro sync;
 #X obj -339 525 delay 0;
 #X obj 105 150 hsl 200 10 0 1 0 1 empty empty rate_rnd 2 5 0 10 -262144
--1 -1 7200 1;
+-1 -1 6300 1;
 #X obj -228 370 *;
 #X obj -249 393 * 1000;
 #X obj -239 460 / 1000;
@@ -6668,10 +6668,10 @@ and send to the name of the module \, for example [s basic-osc];
 #X text 225 -312 params;
 #X obj 103 624 abs_granularsynthesis_particles_20;
 #X obj 105 251 hsl 64 15 0 0.49 0 1 empty empty ramp 2 7 0 10 -262144
--1 -1 3700 1;
+-1 -1 3500 1;
 #X obj 190 -155 unpack f f f f f f f f f f;
 #X obj 244 252 nbx 4 14 0 1e+037 0 1 empty empty st -12 7 0 10 -262144
--1 -1 0 256;
+-1 -1 436 256;
 #X obj -149 -127 float;
 #X obj 191 -179 list;
 #X obj 216 -267 t b a;
@@ -6712,7 +6712,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X text 44 -60 pos;
 #X msg 60 -19 set \$1;
 #X obj 186 252 nbx 4 14 0 1e+037 0 1 empty empty pt -12 7 0 10 -262144
--1 -1 4 256;
+-1 -1 35 256;
 #X obj 221 -239 list split 10;
 #X obj 71 -171 unpack f f;
 #X obj 45 -127 float;
@@ -6733,7 +6733,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X msg 493 208 read -resize \$1 \$2;
 #X obj 504 129 t b a;
 #X obj 495 184 pack s s;
-#X msg 496 156 symbol samples/sample8.wav;
+#X msg 496 156 symbol samples/sample2.wav;
 #X obj 644 25 route \$2;
 #X connect 0 0 65 0;
 #X connect 0 0 94 2;
@@ -6891,10 +6891,10 @@ and send to the name of the module \, for example [s basic-osc];
 #X connect 108 0 107 0;
 #X connect 109 0 10 0;
 #X coords 0 -1 1 1 209 170 1 100 100;
-#X restore 224 124 pd granulator2;
-#X floatatom 275 102 5 0 0 0 - - -;
-#X floatatom 317 78 5 0 100 0 - - -;
-#X obj 325 97 / 100;
+#X restore 238 132 pd granulator2;
+#X floatatom 289 110 5 0 0 0 - - -;
+#X floatatom 331 86 5 0 100 0 - - -;
+#X obj 339 105 / 100;
 #N canvas 218 81 1184 711 songpos96-16 0;
 #X obj 318 440 + 1;
 #X obj 267 436 float;
@@ -6908,7 +6908,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj 172 17 loadbang;
 #X floatatom 126 113 5 30 300 0 bpm - -;
 #X msg -2 85 set \$1;
-#X msg 5 139 131.25;
+#X msg 5 139 41.0156;
 #X obj 174 112 bng 15 250 50 0 empty empty empty 6 7 0 10 -261234 -1
 -1;
 #X obj 278 636 outlet;
@@ -7027,7 +7027,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X connect 55 0 13 0;
 #X connect 56 0 17 0;
 #X coords 0 -1 1 1 120 30 1 100 100;
-#X restore 239 37 pd songpos96-16;
+#X restore 253 45 pd songpos96-16;
 #N canvas -169 125 1370 729 scene_sq1 0;
 #X obj 201 -107 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 60 16 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -7077,7 +7077,7 @@ and send to the name of the module \, for example [s basic-osc];
 -262144;
 #X obj 130 3 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -262144;
-#X obj 186 16 bng 10 250 50 0 empty empty empty 17 7 0 10 -166441 -1
+#X obj 186 16 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -262144;
 #X msg -530 -400 0;
 #X msg -500 -400 1;
@@ -7144,7 +7144,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj 311 -526 t f f;
 #X msg 597 -249 16;
 #X obj 538 -285 t f b;
-#X obj 130 3 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 130 3 bng 10 250 50 0 empty empty empty 17 7 0 10 -166441 -1
 -262144;
 #X obj 677 -165 + 1;
 #X obj 582 -32 - 1;
@@ -7181,7 +7181,7 @@ and send to the name of the module \, for example [s basic-osc];
 -1 -1 126 256;
 #X text 506 0 len;
 #X obj 4 31 hsl 762 8 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 18576 1;
+-1 -1 67112 1;
 #X obj 594 -350 + 1;
 #X obj 711 3 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -7557,9 +7557,9 @@ time 1..128 (for example 1/16 steps);
 #X connect 197 0 123 0;
 #X connect 198 0 51 0;
 #X coords 0 -1 1 1 770 40 1 0 0;
-#X restore 229 381 pd scene_sq1;
-#X floatatom 435 434 5 0 0 0 - - -;
-#X obj 355 432 list prepend;
+#X restore 243 389 pd scene_sq1;
+#X floatatom 449 442 5 0 0 0 - - -;
+#X obj 369 440 list prepend;
 #N canvas 1 85 1032 824 messagememory16 0;
 #X obj -121 47 inlet;
 #X obj 485 57 inlet;
@@ -7652,7 +7652,7 @@ time 1..128 (for example 1/16 steps);
 #X connect 22 0 2 0;
 #X connect 23 0 2 0;
 #X connect 24 0 2 0;
-#X restore 233 430 pd messagememory16;
+#X restore 247 438 pd messagememory16;
 #N canvas -8 -8 1366 685 pcf1s 0;
 #X obj 313 592 inlet~;
 #X obj -94 605 inlet~;
@@ -7677,7 +7677,7 @@ time 1..128 (for example 1/16 steps);
 -1 2400 1;
 #X text 714 13 <-bpm;
 #X obj 108 200 hsl 175 8 0 15 0 0 empty empty empty -2 -6 0 8 -262144
--258699 -1 1160 1;
+-258699 -1 4640 1;
 #X obj 291 106 vsl 8 90 0 1 0 1 empty empty gl 0 100 1 8 -262144 -1
 -1 1000 1;
 #X obj 104 121 vsl 8 73 -1 1 0 1 empty empty empty 0 -8 0 8 -262144
@@ -7785,7 +7785,7 @@ time 1..128 (for example 1/16 steps);
 #X obj 249 102 nbx 3 14 2 16 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 15 256;
 #X obj 201 105 hsl 40 8 -30 30 0 0 empty empty lfo -24 5 0 10 -262144
--1 -1 1459 1;
+-1 -1 1226 1;
 #N canvas 705 79 1076 1000 lopass2p2zm 0;
 #X obj -222 90 inlet~;
 #X obj 133 939 outlet~;
@@ -9686,7 +9686,7 @@ hp-filter;
 #X connect 127 0 128 0;
 #X connect 128 0 75 0;
 #X coords 0 -1 1 1 320 110 1 100 100;
-#X restore 441 121 pd pcf1s;
+#X restore 455 129 pd pcf1s;
 #N canvas -8 -8 1366 685 dualdelay1s 0;
 #X obj -11 367 inlet~;
 #X obj 163 115 vsl 8 100 20 120 0 1 empty empty cut 0 110 1 8 -233017
@@ -11071,8 +11071,8 @@ hp-filter;
 #X connect 101 0 48 0;
 #X connect 102 0 37 0;
 #X coords 0 -1 1 1 200 130 1 100 100;
-#X restore 449 243 pd dualdelay1s;
-#X text 443 52 granulator with scene-sequencer and fx;
+#X restore 463 251 pd dualdelay1s;
+#X text 457 60 granulator with scene-sequencer and fx;
 #N canvas -8 -8 1366 685 sounds 0;
 #X msg 33 163 location samples/sample1.wav;
 #X obj 49 102 loadbang;
@@ -11138,36 +11138,43 @@ hp-filter;
 #X connect 20 0 17 0;
 #X connect 22 0 20 0;
 #X connect 23 0 21 0;
-#X restore 142 34 pd sounds;
-#X obj 132 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 156 42 pd sounds;
+#X obj 146 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 263 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
+#X obj 277 10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 473 466 maestro4 1;
-#X obj 123 241 loadbang;
-#X obj 163 5 butt 1;
-#X obj 322 10 butt 0;
-#X obj 429 10 butt 2;
-#X obj 563 9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 137 249 loadbang;
+#X obj 177 13 butt 1;
+#X obj 336 18 butt 0;
+#X obj 443 18 butt 2;
+#X obj 577 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 527 29 bpm;
-#X text 378 -1 scene;
-#X obj 783 21 knob 0;
-#X obj 892 21 knob 1;
-#X obj 1009 22 knob 2;
-#X obj 811 50 knob 3;
-#X obj 921 51 knob 4;
-#X obj 1031 52 knob 5;
-#X obj 787 88 knob 6;
-#X obj 901 88 knob 7;
-#X obj 1011 89 knob 8;
-#X obj 815 125 knob 9;
-#X obj 928 124 knob 10;
-#X obj 1042 125 knob 11;
-#X text 1162 129 fb hi - fb low - d/w;
-#X text 1135 57 len - nr - pos;
-#X text 1124 91 d/w - filtseq - lpass;
-#X text 1126 23 gran - gran2 - filtseq ting;
+#X text 541 37 bpm;
+#X obj 839 35 knob 0;
+#X obj 948 35 knob 1;
+#X obj 1065 36 knob 2;
+#X obj 867 64 knob 3;
+#X obj 977 65 knob 4;
+#X obj 1087 66 knob 5;
+#X obj 843 102 knob 6;
+#X obj 957 102 knob 7;
+#X obj 1067 103 knob 8;
+#X obj 871 139 knob 9;
+#X obj 984 138 knob 10;
+#X obj 1098 139 knob 11;
+#X text 1218 143 fb hi - fb low - d/w;
+#X text 1191 71 len - nr - pos;
+#X text 1180 105 d/w - filtseq - lpass;
+#X text 1182 37 gran - gran2 - filtseq ting;
+#X obj 1164 265 midirealtimein;
+#X obj 1187 292 sel 248;
+#X obj 1195 318 counter 0 0 5;
+#X obj 1209 341 sel 0;
+#X obj 1234 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 1124 237 midi clock;
+#X text 383 5 restart seq;
 #X connect 11 0 12 0;
 #X connect 12 0 21 0;
 #X connect 12 1 21 1;
@@ -11198,6 +11205,11 @@ hp-filter;
 #X connect 30 1 16 0;
 #X connect 31 1 16 1;
 #X connect 32 0 16 1;
-#X connect 35 1 21 4;
-#X connect 36 1 13 0;
-#X connect 37 1 14 0;
+#X connect 34 1 21 4;
+#X connect 35 1 13 0;
+#X connect 36 1 14 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;
+#X connect 54 0 16 1;
