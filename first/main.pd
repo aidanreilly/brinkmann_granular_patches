@@ -6611,13 +6611,13 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj 233 84 loadbang;
 #N canvas 73 80 1280 729 granulator2 0;
 #X obj 105 166 hsl 200 15 0 1 0 1 empty empty position 2 7 0 10 -262144
--1 -1 17472 1;
+-1 -1 18841 1;
 #X obj 505 29 inlet;
 #X text 503 12 filename;
 #X obj 201 647 outlet~;
 #X obj 302 649 outlet~;
 #X obj 105 132 hsl 200 15 0 1 0 1 empty empty rate 2 7 0 10 -262144
--1 -1 3700 1;
+-1 -1 4800 1;
 #X obj -172 354 t f f;
 #X obj -184 381 *;
 #X obj -198 412 t b f;
@@ -6626,17 +6626,17 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj -197 518 * 1000;
 #X obj -206 552 clip 1 1000;
 #X obj 105 200 hsl 200 15 0 1 0 1 empty empty len 2 7 0 10 -262144
--1 -1 2123 1;
+-1 -1 1923 1;
 #X obj 105 218 hsl 200 10 0 1 0 1 empty empty len_rnd 2 5 0 10 -262144
--1 -1 4490 1;
+-1 -1 3090 1;
 #X obj 111 233 nbx 3 14 -36 36 0 1 empty empty p -8 7 0 10 -262144
--1 -1 -5 256;
+-1 -1 7 256;
 #X obj 153 233 hsl 80 15 0 1 0 1 empty empty pitch_rnd 2 7 0 10 -262144
 -1 -1 0 1;
 #X obj 241 233 hsl 64 15 0 1 0 1 empty empty pan_rnd 2 7 0 10 -262144
--1 -1 2600 1;
+-1 -1 2900 1;
 #X obj 105 184 hsl 200 10 0 1 0 1 empty empty position_rnd 2 5 0 10
--262144 -1 -1 2800 1;
+-262144 -1 -1 900 1;
 #X obj -264 542 delay 10;
 #X obj -121 383 t f f;
 #X obj -119 407 *;
@@ -6653,7 +6653,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X text -315 218 metro sync;
 #X obj -339 525 delay 0;
 #X obj 105 150 hsl 200 10 0 1 0 1 empty empty rate_rnd 2 5 0 10 -262144
--1 -1 6300 1;
+-1 -1 6400 1;
 #X obj -228 370 *;
 #X obj -249 393 * 1000;
 #X obj -239 460 / 1000;
@@ -6668,7 +6668,7 @@ and send to the name of the module \, for example [s basic-osc];
 #X text 225 -312 params;
 #X obj 103 624 abs_granularsynthesis_particles_20;
 #X obj 105 251 hsl 64 15 0 0.49 0 1 empty empty ramp 2 7 0 10 -262144
--1 -1 3500 1;
+-1 -1 700 1;
 #X obj 190 -155 unpack f f f f f f f f f f;
 #X obj 244 252 nbx 4 14 0 1e+037 0 1 empty empty st -12 7 0 10 -262144
 -1 -1 436 256;
@@ -7181,7 +7181,7 @@ and send to the name of the module \, for example [s basic-osc];
 -1 -1 126 256;
 #X text 506 0 len;
 #X obj 4 31 hsl 762 8 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 67112 1;
+-1 -1 17976 1;
 #X obj 594 -350 + 1;
 #X obj 711 3 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -7677,7 +7677,7 @@ time 1..128 (for example 1/16 steps);
 -1 2400 1;
 #X text 714 13 <-bpm;
 #X obj 108 200 hsl 175 8 0 15 0 0 empty empty empty -2 -6 0 8 -262144
--258699 -1 4640 1;
+-258699 -1 3480 1;
 #X obj 291 106 vsl 8 90 0 1 0 1 empty empty gl 0 100 1 8 -262144 -1
 -1 1000 1;
 #X obj 104 121 vsl 8 73 -1 1 0 1 empty empty empty 0 -8 0 8 -262144
@@ -7785,7 +7785,7 @@ time 1..128 (for example 1/16 steps);
 #X obj 249 102 nbx 3 14 2 16 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 15 256;
 #X obj 201 105 hsl 40 8 -30 30 0 0 empty empty lfo -24 5 0 10 -262144
--1 -1 1226 1;
+-1 -1 2547 1;
 #N canvas 705 79 1076 1000 lopass2p2zm 0;
 #X obj -222 90 inlet~;
 #X obj 133 939 outlet~;
@@ -11167,14 +11167,29 @@ hp-filter;
 #X text 1191 71 len - nr - pos;
 #X text 1180 105 d/w - filtseq - lpass;
 #X text 1182 37 gran - gran2 - filtseq ting;
-#X obj 1164 265 midirealtimein;
-#X obj 1187 292 sel 248;
-#X obj 1195 318 counter 0 0 5;
-#X obj 1209 341 sel 0;
-#X obj 1234 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1034 545 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 1124 237 midi clock;
+#X text 1126 201 midi clock;
 #X text 383 5 restart seq;
+#X obj 1041 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1062 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1084 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1106 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1089 399 mod 96;
+#X obj 1177 367 + 1;
+#X obj 1132 369 f;
+#X obj 1041 434 sel 0 24 48 72;
+#X obj 1139 257 == 248;
+#X obj 1166 316 del 500;
+#X msg 1166 339 0;
+#X obj 1139 289 t b b;
+#X text 1196 336 < resets counter to 0;
+#X obj 1041 496 t b;
+#X obj 1151 219 midirealtimein;
 #X connect 11 0 12 0;
 #X connect 12 0 21 0;
 #X connect 12 1 21 1;
@@ -11208,8 +11223,23 @@ hp-filter;
 #X connect 34 1 21 4;
 #X connect 35 1 13 0;
 #X connect 36 1 14 0;
-#X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 53 0;
-#X connect 53 0 54 0;
-#X connect 54 0 16 1;
+#X connect 50 0 16 1;
+#X connect 53 0 66 0;
+#X connect 54 0 66 0;
+#X connect 55 0 66 0;
+#X connect 56 0 66 0;
+#X connect 57 0 60 0;
+#X connect 58 0 59 1;
+#X connect 59 0 58 0;
+#X connect 59 0 57 0;
+#X connect 60 0 53 0;
+#X connect 60 1 54 0;
+#X connect 60 2 55 0;
+#X connect 60 3 56 0;
+#X connect 61 0 64 0;
+#X connect 62 0 63 0;
+#X connect 63 0 59 1;
+#X connect 64 0 59 0;
+#X connect 64 1 62 0;
+#X connect 66 0 50 0;
+#X connect 67 0 61 0;
