@@ -6628,14 +6628,8 @@ and send to the name of the module \, for example [s basic-osc];
 #X text 1191 71 len - nr - pos;
 #X text 1180 105 d/w - filtseq - lpass;
 #X text 1182 37 gran - gran2 - filtseq ting;
-#X msg 868 226 GET http://locusonus.org/soundmap/list;
-#X obj 889 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 869 363 list trim;
-#X obj 869 385 route url;
-#X msg 769 373 clear;
+#X msg 770 443 clear;
 #X msg 908 498 print;
-#X obj 868 248 t a b;
 #X msg 1004 479 rewind;
 #X obj 869 407 symbol;
 #X obj 869 560 textfile;
@@ -6645,37 +6639,101 @@ and send to the name of the module \, for example [s basic-osc];
 #X obj 854 617 locusamp~;
 #X text 1053 536 <-- [2] LISTEN TO NEXT STREAM;
 #X text 1118 227 <--- [1] GET ACTIVE STREAM URLs;
-#X obj 846 643 *~ 0;
-#X obj 880 643 *~ 0;
 #X obj 919 663 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 803 179 require purest_json external;
 #X obj 682 179 import purest_json;
-#X obj 868 275 rest;
-#X obj 869 327 json-decode;
 #X msg 943 613 http://locus.creacast.com:9001/le-rove_niolon.ogg;
 #X msg 943 589 set \$1;
-#X connect 12 1 42 0;
-#X connect 31 0 37 0;
-#X connect 33 0 34 0;
-#X connect 34 0 39 0;
-#X connect 35 0 40 0;
-#X connect 36 0 40 0;
-#X connect 37 0 51 0;
-#X connect 37 1 35 0;
-#X connect 38 0 40 0;
-#X connect 39 0 41 0;
-#X connect 40 0 43 0;
-#X connect 40 0 54 0;
-#X connect 41 0 40 0;
-#X connect 42 0 40 0;
-#X connect 43 0 46 0;
-#X connect 43 1 47 0;
-#X connect 43 3 48 0;
-#X connect 46 0 11 0;
-#X connect 47 0 11 2;
-#X connect 51 0 52 0;
-#X connect 51 1 32 0;
-#X connect 52 0 33 0;
-#X connect 52 1 38 0;
-#X connect 54 0 53 0;
+#X msg 309 152 http://locus.creacast.com:9001/amsterdam_Patapoe.mp3
+;
+#X msg 310 181 http://locus.creacast.com:9001/jeju_georo.mp3;
+#X msg 310 208 http://locus.creacast.com:9001/wave_farm_pond_station_new_york.mp3
+;
+#X msg 311 238 http://locus.creacast.com:9001/jasper_ridge_birdcast.mp3
+;
+#X msg 318 269 mp3s.nc.u-tokyo.ac.jp/OTANOMO_CyberForest.mp3;
+#X msg 319 299 mp3s.nc.u-tokyo.ac.jp/Fuji_CyberForest.mp3;
+#X msg 327 320 http://locus.creacast.com:9001/kyoto_cyberforesthydro.mp3
+;
+#X msg 328 350 http://locus.creacast.com:9001/rainforest_canopy_mary_cairncross_scenic_reserve.mp3
+;
+#X msg 335 381 http://locus.creacast.com:9001/florence_ears_in_space.mp3
+;
+#X msg 336 411 http://locus.creacast.com:9001/acra_wave_farm.mp3;
+#X obj 283 30 + 1;
+#X obj 203 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 227 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 247 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 268 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 291 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 308 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 329 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 348 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 215 73 float 1;
+#X obj 290 70 mod 8;
+#X obj 210 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 215 98 route 0 1 2 3 4 5 6 7 8 0;
+#X obj 372 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 391 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 12 1 67 0;
+#X connect 13 1 37 0;
+#X connect 14 1 33 0;
+#X connect 31 0 35 0;
+#X connect 32 0 35 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 0;
+#X connect 35 0 38 0;
+#X connect 35 0 45 0;
+#X connect 36 0 35 0;
+#X connect 37 0 35 0;
+#X connect 38 0 11 0;
+#X connect 38 1 11 2;
+#X connect 38 3 41 0;
+#X connect 45 0 44 0;
+#X connect 46 0 34 0;
+#X connect 47 0 34 0;
+#X connect 48 0 34 0;
+#X connect 49 0 34 0;
+#X connect 50 0 34 0;
+#X connect 51 0 34 0;
+#X connect 52 0 34 0;
+#X connect 53 0 34 0;
+#X connect 54 0 34 0;
+#X connect 55 0 34 0;
+#X connect 56 0 66 0;
+#X connect 57 0 46 0;
+#X connect 58 0 47 0;
+#X connect 59 0 48 0;
+#X connect 60 0 49 0;
+#X connect 61 0 50 0;
+#X connect 62 0 51 0;
+#X connect 63 0 52 0;
+#X connect 64 0 53 0;
+#X connect 65 0 56 0;
+#X connect 65 0 68 0;
+#X connect 66 0 65 1;
+#X connect 67 0 65 0;
+#X connect 68 0 57 0;
+#X connect 68 1 58 0;
+#X connect 68 2 59 0;
+#X connect 68 3 60 0;
+#X connect 68 4 61 0;
+#X connect 68 5 62 0;
+#X connect 68 6 63 0;
+#X connect 68 7 64 0;
+#X connect 68 9 69 0;
+#X connect 68 10 70 0;
+#X connect 69 0 54 0;
+#X connect 70 0 55 0;
