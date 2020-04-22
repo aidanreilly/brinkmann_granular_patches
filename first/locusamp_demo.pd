@@ -1,0 +1,142 @@
+#N canvas 84 59 615 453 10;
+#X obj 223 2 cnv 15 376 120 empty empty empty 20 12 0 14 -191479 -66577
+0;
+#N canvas 201 23 1079 688 get-active-stream-list 0;
+#X msg 121 -249 GET http://locusonus.org/soundmap/list;
+#X obj 206 -148 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 121 -65 list trim;
+#X obj 121 -43 route url;
+#X obj 121 -227 t a b;
+#X obj 137 -17 symbol;
+#X text 377 -243 <--- [1] GET ACTIVE STREAM URLs;
+#X msg 419 -125 names http://78.46.38.217:80/vlf15 http://locus.creacast.com:9001/vesinet_cerceris.ogg
+http://locus.creacast.com:9001/aix_provence_st_jerome.ogg http://locus.creacast.com:9001/cologne_aporee.ogg
+http://locus.creacast.com:9001/london_camberwell.ogg http://locus.creacast.com:9001/berlin_neukoelln.ogg
+http://locus.creacast.com:9001/le-rove_niolon.ogg http://locus.creacast.com:9001/suffolk_coast_Walberswick.ogg
+http://209.133.216.3:7118/stream http://209.133.216.3:7162/stream http://locus.creacast.com:9001/liverpool_ormskirk
+http://locus.creacast.com:9001/emporda_aiguamolls.ogg http://stream.borris.me:8888/outside2
+http://locus.creacast.com:9001/wave_farm_pond_station_new_york.mp3
+http://locus.creacast.com:9001/Heathrow_Planes1.ogg http://locus.creacast.com:9001/gary_gmo_dunes1.ogg
+http://locus.creacast.com:9001/prague_sokolská_street.ogg http://mp3s.nc.u-tokyo.ac.jp/OTANOMO_CyberForest.mp3
+http://mp3s.nc.u-tokyo.ac.jp/Fuji_CyberForest.mp3 http://mp3s.nc.u-tokyo.ac.jp/OTSUCHI_CyberForest.mp3
+http://2.onj.me/outside http://locus.creacast.com:9001/kolkata_chittaranjan_colony.mp3
+http://locus.creacast.com:9001/vallejo_blue_rock_hills.mp3 http://locus.creacast.com:9001/south_walney.mp3
+http://locus.creacast.com:9001/maputo_maputo.mp3 http://locus.creacast.com:9001/brussels_rue_de_la_senne.mp3
+http://locus.creacast.com:9001/mobile_newcastle_uk.ogg, f 103;
+#X msg 247 -127 set names;
+#X obj 419 208 s streamlist;
+#X obj 121 -279 inlet;
+#X msg 312 -31 add2 \$1;
+#X obj 121 -186 rest;
+#X obj 121 -103 json-decode;
+#X obj 142 -135 outlet;
+#X connect 0 0 4 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 12 0;
+#X connect 4 1 1 0;
+#X connect 5 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 10 0 0 0;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 12 1 7 0;
+#X connect 12 1 14 0;
+#X connect 13 0 2 0;
+#X restore 28 46 pd get-active-stream-list;
+#X obj 28 24 bng 15 250 50 0 empty empty List\ active\ streams 17 7
+0 10 -64 -258049 -1;
+#X obj 28 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 50 72 done;
+#N canvas 133 23 1147 707 LocusAmp_reader 0;
+#X obj 141 253 tgl 15 0 empty empty connected -7 -10 0 10 -262144 -1
+-1 1 1;
+#X msg 0 228 disconnect;
+#X dropdown 116 126 60 1 0 3 ACTIVE streamlist -, f 60;
+#X msg -51 165 connect \$1;
+#X obj 134 185 bng 25 250 50 0 empty empty disconnect -7 -10 0 10 -262144
+-1 -1;
+#X obj 433 151 met~;
+#X obj 456 504 throw~ out1;
+#X obj 534 503 throw~ out2;
+#X obj -14 276 locusamp~ 2;
+#X obj 375 150 met~;
+#X obj 287 641 / 1000;
+#X floatatom 221 237 7 0 0 3 Kb/s - -, f 7;
+#X floatatom 312 178 5 0 0 3 channel - -, f 5;
+#X floatatom 267 178 5 0 0 3 Hz - -, f 5;
+#X obj 122 641 symbol;
+#X symbolatom 210 178 7 0 0 3 codec - -, f 7;
+#X obj 342 641 symbol;
+#X symbolatom 284 236 7 0 0 3 format - -, f 7;
+#X obj -43 550 route codec samplerate channel bitrate sampleformat
+, f 74;
+#X text 436 281 Ch 1;
+#X text 379 281 Ch 2;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 8 0 9 0;
+#X connect 8 1 5 0;
+#X connect 8 2 18 0;
+#X connect 8 3 0 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 14 0;
+#X connect 18 1 13 0;
+#X connect 18 2 12 0;
+#X connect 18 3 10 0;
+#X connect 18 4 16 0;
+#X coords 0 -1 1 1 400 200 1 100 100;
+#X restore 27 130 pd LocusAmp_reader;
+#N canvas 434 23 846 595 output 0;
+#X obj 236 109 vu 15 80 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 167 110 vsl 15 80 0 1 0 1 empty gainGeneral empty 0 -8 0 8 -4033
+-1 -1 7050 1;
+#X obj 31 348 pvu~;
+#X obj -28 319 *~;
+#X obj 288 109 vu 15 80 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 184 345 pvu~;
+#X obj 125 316 *~;
+#X msg 122 207 \; pd dsp \$1;
+#X obj 122 166 tgl 15 0 empty start AUDIO 0 -6 0 8 -258699 -1 -1 1
+1;
+#X obj -28 287 catch~ out1;
+#X obj 125 289 catch~ out2;
+#X obj 121 464 dac~ 1 2;
+#X connect 1 0 3 1;
+#X connect 1 0 6 1;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 11 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 6 0 11 1;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 6 0;
+#X coords 0 -1 1 1 252 100 1 100 100;
+#X restore 26 345 pd output;
+#X text 260 3 LocusAmp demo patch;
+#X text 239 20 Hit "List active streams" to list;
+#X text 231 34 all current active streams on the;
+#X text 230 102 Locus Sonus 2017;
+#X text 230 50 Locus Sonus Soundmap (http://locusonus.org/soudnmap)
+;
+#X text 238 66 Select a stream from the drop down menu on LocusAmp_reader
+;
+#X obj 295 345 cnv 15 289 105 empty empty empty 20 12 0 14 -187571
+-66577 0;
+#X text 305 350 contact: pd@locusonus.org;
+#X text 304 370 LocusAmp home page: http://locusonus.org/pd;
+#X text 230 85 This patch work on Pd-L2ork only (dropdown menu);
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
