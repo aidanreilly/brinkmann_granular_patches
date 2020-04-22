@@ -1,4 +1,4 @@
-#N canvas 648 23 475 736 10;
+#N canvas 512 32 475 575 10;
 #X obj -443 -191 cnv 15 450 900 empty empty LocuStreamBox_v1.2 20 24
 1 28 -99865 -258048 0;
 #X obj -428 5 cnv 15 400 180 empty empty empty 20 12 1 16 -162280 -66577
@@ -11,7 +11,7 @@
 #X obj 11 -37 r oggcast;
 #X obj 180 30 print;
 #X obj 112 119 tgl 15 0 empty auto-reconnect auto-reconnect 18 8 1
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 1 1;
 #X text 170 48 BUFFER IS CRUCIAL TO AVOID CLICKS;
 #X msg 249 12 disconnect;
 #X obj 376 -18 outlet;
@@ -50,7 +50,7 @@
 #X obj 436 548 shell;
 #X msg 436 524 sudo reboot;
 #X msg 329 502 set \$1;
-#X msg 329 523 12;
+#X msg 329 523 1;
 #X msg 330 458 0;
 #X floatatom 329 481 5 0 0 0 - - -;
 #X obj 302 479 +;
@@ -70,7 +70,7 @@
 #X msg 764 350 1;
 #X obj 764 327 metro 1000;
 #X msg 516 514 set \$1;
-#X msg 516 535 12;
+#X msg 516 535 1;
 #X text 515 564 reboot count;
 #X text 328 543 recon count;
 #X obj 468 332 route 10;
@@ -221,7 +221,7 @@
 #X obj -428 17 t b b b b b;
 #X obj -344 215 s url?;
 #X obj -428 318 symbol;
-#X obj -342 -9 tgl 15 0 empty stream empty 0 -6 0 8 -262144 -1 -1 0
+#X obj -342 -9 tgl 15 0 empty stream empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X msg -396 101 -1;
 #X obj -343 193 makefilename http://locus.creacast.com:9001/%s;
@@ -231,7 +231,7 @@
 #X obj 357 147 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 375 153 tgl 50 0 stream empty STREAM 5 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X msg -351 241 \; oggcast server 1 \; oggcast passwd locusonus1 \;
 oggcast vbr 44100 2 0.4 \; oggcast connect locus.creacast.com \$1 9001
 \; auto-reconnect 1 \;;
