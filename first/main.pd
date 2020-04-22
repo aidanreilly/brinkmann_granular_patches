@@ -1,6 +1,6 @@
-#N canvas -8 -8 1366 685 10;
+#N canvas 52 72 1163 548 10;
 #X declare -path patch_editor_abs;
-#X obj 18 609 declare -path patch_editor_abs;
+#X obj 19 485 declare -path patch_editor_abs;
 #N canvas 447 23 707 551 patch-editor-do-not-delete 0;
 #X msg 26 128 \; pd dsp 0;
 #X obj 26 34 loadbang;
@@ -6591,8 +6591,8 @@ and send to the name of the module \, for example [s basic-osc];
 #X connect 16 0 15 0;
 #X connect 17 0 16 0;
 #X connect 20 0 4 0;
-#X restore 18 630 pd patch-editor-do-not-delete;
-#X text 30 593 DO NOT DELETE THESE OBJECTS:;
+#X restore 19 506 pd patch-editor-do-not-delete;
+#X text 31 469 DO NOT DELETE THESE OBJECTS:;
 #X obj 7 2 cnv 5 5 5 empty empty AUTOMATONISM 0 12 0 15 -262144 -66577
 0;
 #X obj 8 28 bng 15 250 50 0 open-quick-guide! empty <--QUICK-GUIDE
@@ -6608,29 +6608,29 @@ and send to the name of the module \, for example [s basic-osc];
 #X floatatom 8 146 5 0 0 1 CPU% CPU -;
 #X obj 8 105 bng 15 250 50 0 open-reset-warning! empty <--RESET! 17
 7 0 10 -262144 -1 -1;
-#X obj 354 372 maestro4 1;
-#X obj 137 249 loadbang;
-#X obj 721 305 tgl 15 0 empty empty connection_state 20 7 0 10 -4034
+#X obj 153 281 maestro4 1;
+#X obj 255 91 loadbang;
+#X obj 518 298 tgl 15 0 empty empty connection_state 20 7 0 10 -4034
 -1 -1 0 1;
-#X obj 655 394 print error;
-#X obj 1074 450 / 1000;
-#X floatatom 1074 472 7 0 0 3 Kb/s - -;
-#X floatatom 1008 472 5 0 0 3 channel - -;
-#X floatatom 944 472 5 0 0 3 Hz - -;
-#X obj 880 450 symbol;
-#X symbolatom 880 472 7 0 0 3 codec - -;
-#X obj 1202 391 print message;
-#X obj 1137 450 symbol;
-#X symbolatom 1137 472 7 0 0 3 format - -;
-#X obj 619 272 locusamp~ 2 512;
-#X obj 687 359 route error warning metadata codec samplerate channel
+#X obj 452 387 print error;
+#X obj 871 443 / 1000;
+#X floatatom 871 465 7 0 0 3 Kb/s - -;
+#X floatatom 805 465 5 0 0 3 channel - -;
+#X floatatom 741 465 5 0 0 3 Hz - -;
+#X obj 677 443 symbol;
+#X symbolatom 677 465 7 0 0 3 codec - -;
+#X obj 999 384 print message;
+#X obj 934 443 symbol;
+#X symbolatom 934 465 7 0 0 3 format - -;
+#X obj 262 230 locusamp~ 2 512;
+#X obj 484 352 route error warning metadata codec samplerate channel
 bitrate sampleformat, f 74;
-#X obj 742 394 print warning;
-#X obj 844 394 print metadata;
-#X msg 718 201 disconnect;
-#X text 770 229 force output status;
-#X msg 731 229 bang;
-#X msg 619 21 connect http://locus.creacast.com:9001/cork_st._luke_s.ogg
+#X obj 539 387 print warning;
+#X obj 641 387 print metadata;
+#X msg 360 174 disconnect;
+#X text 412 202 force output status;
+#X msg 373 202 bang;
+#X msg 269 138 connect http://locus.creacast.com:9001/cork_st._luke_s.ogg
 , f 65;
 #X connect 12 0 31 0;
 #X connect 15 0 16 0;
