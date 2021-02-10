@@ -1,6 +1,6 @@
 #N canvas 318 223 1013 489 10;
 #X declare -stdpath blokas;
-#N canvas 737 129 1063 630 (subpatch) 0;
+#N canvas -8 -8 1366 685 (subpatch) 1;
 #X obj 43 179 cnv 15 260 215 empty empty empty 20 12 0 14 -1 -66577
 0;
 #X obj 53 236 cnv 15 129 150 empty empty Phase-Vocoder 6 15 2 18 -58398
@@ -9,7 +9,7 @@
 0;
 #N canvas 276 259 532 498 TabWrite 0;
 #X obj 89 282 tabwrite~ \$0-sample;
-#X obj 224 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 224 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 224 124 sel 0 1;
 #X obj 243 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -20,13 +20,13 @@
 #X msg 258 212 start \$1;
 #X obj -4 205 r \$0-recbangpv;
 #X obj 223 -1 inlet;
-#X floatatom 89 388 5 0 0 0 - - -, f 5;
+#X floatatom 89 388 5 0 0 0 - - -;
 #X obj 89 364 t b a;
 #X obj 75 465 s \$0-speed;
 #X obj 75 442 f;
 #X obj 257 167 f;
 #X obj 279 135 r \$0-rec-point;
-#X floatatom 283 166 5 0 0 0 - - -, f 5;
+#X floatatom 283 166 5 0 0 0 - - -;
 #X obj 257 191 * 44100;
 #X obj 382 132 s \$0-metro-on-off;
 #X obj 89 409 abs;
@@ -107,7 +107,7 @@
 #X restore 146 186 pd loadbang;
 #N canvas 490 407 440 365 Location 0;
 #X obj 92 251 +;
-#X floatatom 107 164 7 0 0 0 - - -, f 7;
+#X floatatom 107 164 7 0 0 0 - - -;
 #X obj 80 186 / 2;
 #X obj 65 207 -;
 #X text -52 208 back up 1/2 window;
@@ -117,7 +117,7 @@
 #X obj 14 11 r \$0-rewind;
 #X obj 14 82 expr ($f1/44.1) * -0.5;
 #X obj 14 138 s \$0-location;
-#X floatatom 14 109 5 0 0 0 - - -, f 5;
+#X floatatom 14 109 5 0 0 0 - - -;
 #X connect 0 0 3 0;
 #X connect 1 0 0 1;
 #X connect 2 0 0 0;
@@ -158,7 +158,7 @@
 #X obj 65 230 t f f;
 #X obj -1 298 outlet;
 #X obj 266 299 outlet;
-#X obj 18 41 nbx 5 18 -1e+37 1e+37 0 0 \$0-speed \$0-speed-set Speed
+#X obj 18 41 nbx 5 18 -1e+037 1e+037 0 0 \$0-speed \$0-speed-set Speed
 73 9 0 13 -183930 -1 -1 0 256;
 #N canvas 318 50 309 174 Line-Location 0;
 #X msg 17 120 \$1 \, \$2 \$3;
@@ -169,7 +169,7 @@
 #X obj 17 91 pack 0 0 f;
 #X text 56 15 Location samples - (1/2 window);
 #X text 85 38 Location samples + (1/2 window);
-#X floatatom 90 90 5 0 0 0 - - -, f 5;
+#X floatatom 90 90 5 0 0 0 - - -;
 #X text 158 63 Tempo do [line~];
 #X text 64 150 Pro [line~];
 #X connect 0 0 3 0;
@@ -203,7 +203,7 @@
 #X obj 285 145 s \$0-speed-set;
 #X obj 172 94 s \$0-speed;
 #X obj 159 47 r \$0-location;
-#X floatatom 133 197 8 0 0 0 - - -, f 8;
+#X floatatom 133 197 8 0 0 0 - - -;
 #X obj 133 226 outlet;
 #X obj 193 227 outlet;
 #X obj 52 78 r \$0-loop-Loc;
@@ -213,7 +213,7 @@
 #X text 311 88 Speed define o passo/velocidade do contador \, que é
 controlado por um [bang~].;
 #X text 112 248 Location em Milisegundos;
-#X floatatom 207 175 8 0 0 0 - - -, f 8;
+#X floatatom 207 175 8 0 0 0 - - -;
 #X obj 168 129 / 100;
 #X obj 150 25 r \$0-Loop-PVoc-Slider;
 #X connect 0 0 9 0;
@@ -398,18 +398,18 @@ addcomma \, add2 speed \$5 \, addcomma \, add2 lock \$6 \, addcomma
 #X obj -20 80 r \$0-window-size;
 #X obj 3 101 r \$0-transpo;
 #X obj -64 59 r \$0-save-preset;
-#X floatatom 8 196 5 0 0 0 - - -, f 5;
-#X floatatom -34 200 5 0 0 0 - - -, f 5;
+#X floatatom 8 196 5 0 0 0 - - -;
+#X floatatom -34 200 5 0 0 0 - - -;
 #X obj 87 61 r \$0-pvgain;
-#X floatatom 58 197 5 0 0 0 - - -, f 5;
-#X floatatom 114 195 5 0 0 0 - - -, f 5;
+#X floatatom 58 197 5 0 0 0 - - -;
+#X floatatom 114 195 5 0 0 0 - - -;
 #X obj 183 68 r \$0-to-speed;
 #X obj 234 99 r \$0-lock;
 #X obj 108 83 r \$0-temp;
-#X floatatom 235 194 5 0 0 0 - - -, f 5;
+#X floatatom 235 194 5 0 0 0 - - -;
 #X obj 183 91 abs;
-#X floatatom 192 194 5 0 0 0 - - -, f 5;
-#X floatatom -86 197 5 0 0 0 - - -, f 5;
+#X floatatom 192 194 5 0 0 0 - - -;
+#X floatatom -86 197 5 0 0 0 - - -;
 #X obj -91 286 list;
 #X obj -115 34 r \$0-save-preset-bang;
 #X obj 266 120 r \$0-pre-name;
@@ -417,7 +417,7 @@ addcomma \, add2 speed \$5 \, addcomma \, add2 lock \$6 \, addcomma
 #X obj -122 99 t b b;
 #X obj -49 172 pack float float float float float float float symbol
 float;
-#X floatatom 344 194 5 0 0 0 - - -, f 5;
+#X floatatom 344 194 5 0 0 0 - - -;
 #X obj 302 149 r \$0-RadioValue;
 #X msg -121 407 menusave;
 #X obj -121 428 send pd-LPVoc.pd;
@@ -452,14 +452,14 @@ float;
 #N canvas 14 391 432 553 route 0;
 #X obj 35 20 inlet;
 #N canvas 23 260 357 177 hop 0;
-#X floatatom 68 63 5 0 0 0 - - -, f 5;
+#X floatatom 68 63 5 0 0 0 - - -;
 #X obj 31 69 / 4;
 #X text 55 117 computation period (msec) for overlap of 4;
 #X text 121 62 msec in a window;
 #X obj 31 94 s \$0-hopinms;
 #X obj 30 17 inlet;
 #X obj 30 39 / 44.1;
-#X floatatom 124 92 5 0 0 0 - - -, f 5;
+#X floatatom 124 92 5 0 0 0 - - -;
 #X connect 1 0 4 0;
 #X connect 1 0 7 0;
 #X connect 5 0 6 0;
@@ -521,7 +521,7 @@ Name Loop;
 -1 -1 1 1;
 #X obj 5 126 hradio 23 1 0 7 qwqhk14524444 \$0-wsize Window_Size 6
 -10 0 11 -4034 -262144 -1 4.001;
-#X obj 94 109 nbx 5 14 -1e+37 1e+37 0 0 gdgf354354 \$0-window-size
+#X obj 94 109 nbx 5 14 -1e+037 1e+037 0 0 gdgf354354 \$0-window-size
 empty 0 -6 0 10 -4034 -1 -1 2048 256;
 #X text 10 128 7;
 #X text 34 128 8;
@@ -538,10 +538,10 @@ empty 0 -6 0 10 -4034 -1 -1 2048 256;
 1 14 -199398 -1 -1 1 256;
 #X obj 356 21 vsl 23 128 0 1 0 0 \$0-pvgain \$0-pvol Vol 0 -10 0 13
 -162983 -1 -1 12600 1;
-#X obj 250 42 nbx 5 40 -1e+37 1e+37 0 0 \$0-to-speed \$0-speed-preset
-Motion 0 -9 0 15 -3187 -1 -1 0 256;
-#X obj 250 103 nbx 5 40 -1e+37 1e+37 0 0 \$0-transpo \$0-transpo-set
-Transp 0 -9 0 15 -157606 -1 -1 -641.367 256;
+#X obj 250 42 nbx 5 40 -1e+037 1e+037 0 0 \$0-to-speed \$0-speed-preset
+Motion 0 -9 0 15 -3187 -1 -1 25 256;
+#X obj 250 103 nbx 5 40 -1e+037 1e+037 0 0 \$0-transpo \$0-transpo-set
+Transp 0 -9 0 15 -157606 -1 -1 -51 256;
 #N canvas 134 50 426 154 window 0;
 #X obj 18 54 expr pow(2 \, ($f1 + 7));
 #X msg 181 66 set \$1;
@@ -556,12 +556,12 @@ Transp 0 -9 0 15 -157606 -1 -1 -641.367 256;
 #X connect 5 0 0 0;
 #X connect 6 0 2 0;
 #X restore 43 157 pd window;
-#X obj 101 68 bng 30 250 50 0 \$0-snd-P-C \$0-rcv-P-C Continue 0 -6
-0 10 -24198 -33289 -33289;
+#X obj 101 68 bng 30 250 50 0 \$0-snd-P-C \$0-rcv-P-C Pause 0 -6 0
+10 -241291 -33289 -33289;
 #X obj 205 110 tgl 30 0 \$0-freeze-it \$0-set-freeze Freeze -1 -8 0
-10 -83269 -222849 -1 1 1;
+10 -83269 -222849 -1 0 1;
 #X obj 104 19 knob 28 28 0 1 0 0 \$0-Loc-Knob \$0-djfnskjnfksjdnkjsdnfks
-Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
+Location 15 -8 2 11 6.93636e+006 6.93929e+006 6.93636e+006 1719 0;
 #X obj 1 0 cnv 15 60 16 empty empty control 5 7 0 12 -58255 -262144
 0;
 #N canvas 818 104 388 315 freeze 0;
@@ -569,7 +569,7 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X msg 149 56 set \$1;
 #X obj 149 82 s \$0-speed-preset;
 #X obj 123 27 abs;
-#X floatatom 194 -14 5 0 0 0 - - -, f 5;
+#X floatatom 194 -14 5 0 0 0 - - -;
 #X obj 208 -77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 234 15 s \$0-speed-preset;
@@ -612,7 +612,7 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X msg 41 473 \$2 \, \$1 500;
 #X obj 118 257 s \$0-set-freeze;
 #X obj 42 565 *;
-#X floatatom 42 612 5 0 0 0 - - -, f 5;
+#X floatatom 42 612 5 0 0 0 - - -;
 #X obj 42 637 * 1000;
 #X obj 128 618 /;
 #X obj 128 640 * 100;
@@ -685,8 +685,8 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X restore 189 332 pd knob-loc;
 #X obj 319 22 bng 17 250 50 0 \$0-rev-bang \$0-vchbgblooo Bounce -14
 -6 0 10 -4032 -1 -1;
-#X obj 204 21 vradio 18 1 1 3 \$0-RadioValue \$0-AutoRadio Bounce 0
--8 0 10 -204800 -41667 -1 2;
+#X obj 204 21 vradio 18 1 1 3 \$0-RadioValue \$0-AutoRadio Loop 0 -8
+0 10 -204800 -41667 -1 1;
 #N canvas 60 73 237 270 gain 0;
 #X obj 83 26 inlet~;
 #X obj 83 188 outlet~;
@@ -729,8 +729,8 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X obj 270 135 line;
 #X obj 270 328 moses;
 #X obj 332 360 s \$0-stop-time;
-#X obj 270 362 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--204786 -1 -1 61 256;
+#X obj 270 362 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -204786 -1 -1 0 256;
 #X obj 283 451 f;
 #X obj 283 473 s \$0-rec-point;
 #X obj 270 49 r \$0-rewind;
@@ -770,8 +770,8 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X restore 186 361 pd real-time;
 #X obj 33 28 inlet;
 #X obj 287 390 s \$0-moses-timing;
-#X obj 34 404 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--261682 -1 -1 38.8367 256;
+#X obj 34 404 nbx 6 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -261682 -1 -1 0 256;
 #X obj 302 102 float;
 #N canvas 209 64 308 517 metro 0;
 #X obj 9 427 outlet;
@@ -788,8 +788,8 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X obj -96 158 t b b;
 #X obj 9 207 r \$0-rewind;
 #X obj 58 427 s \$0-metro-counter;
-#X obj 58 408 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 61 256;
+#X obj 58 408 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj -39 185 r \$0-bang-the-metro-back;
 #N canvas 308 176 452 363 restart-metro 0;
 #X obj 119 79 expr abs($f1 - $f2) * 1000;
@@ -799,8 +799,8 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X obj 74 138 f;
 #X obj 74 273 sel 1;
 #X obj 272 32 r \$0-metro-counter;
-#X obj 272 56 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 61 256;
+#X obj 272 56 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 89 115 r \$0-metro-counter;
 #X obj 74 295 s \$0-bang-the-metro-back;
 #X obj 74 160 trigger float float bang;
@@ -835,7 +835,7 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X obj 74 256 r \$0-recbangpv;
 #X msg 74 278 1;
 #X obj -84 78 r \$0-snd-P-C;
-#X obj -84 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj -84 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 13 79 set 1;
 #X obj 31 54 r \$0-rewind;
@@ -871,14 +871,14 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X connect 26 0 25 0;
 #X connect 27 0 25 0;
 #X restore 194 30 pd metro;
-#X obj 194 50 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--195568 -1 -1 61 256;
+#X obj 194 50 nbx 4 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -195568 -1 -1 0 256;
 #X obj 34 524 outlet;
 #N canvas 405 50 226 265 LocSlider 0;
 #X obj 6 2 inlet;
 #X obj -19 219 outlet;
-#X obj 6 48 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 38.8367 256;
+#X obj 6 48 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
 #X obj 6 27 / 1000;
 #X obj 87 109 mod 60;
 #X obj 6 181 s \$0-rcv-ph-slider;
@@ -909,7 +909,7 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X obj 38 123 sel 0 1;
 #X obj 57 146 f;
 #X obj 32 146 f;
-#X floatatom 46 170 5 0 0 0 - - -, f 5;
+#X floatatom 46 170 5 0 0 0 - - -;
 #X obj 38 56 t f f;
 #X obj 46 255 -;
 #X obj 73 236 int;
@@ -948,14 +948,14 @@ Location 15 -8 2 11 6.93636e+06 6.93929e+06 6.93636e+06 1719 0;
 #X connect 16 0 17 0;
 #X connect 19 0 8 0;
 #X restore 347 208 pd tempo;
-#X obj 347 237 nbx 6 14 -1e+37 1e+37 0 0 \$0-time-lenght empty empty
+#X obj 347 237 nbx 6 14 -1e+037 1e+037 0 0 \$0-time-lenght empty empty
 0 -8 0 10 -204800 -1 -1 60 256;
 #X text 416 234 Em segundos (s \$0-time-lenght);
 #X text 40 423 Location em Segundos;
 #X text 27 549 PVoc Time;
 #X text 258 547 Real Time;
-#X obj 347 188 nbx 6 14 -1e+37 1e+37 0 0 empty \$0-temp-nbx empty 0
--8 0 10 -257985 -1 -1 1 256;
+#X obj 347 188 nbx 6 14 -1e+037 1e+037 0 0 empty \$0-temp-nbx empty
+0 -8 0 10 -257985 -1 -1 1 256;
 #X text 406 207 Definição de tempo do usuário;
 #X text 417 186 (r \$0-temp-nbx);
 #X connect 0 0 1 0;
@@ -1028,7 +1028,7 @@ atuais [back/front]).;
 #X obj 223 27 inlet~;
 #X obj 22 145 outlet~;
 #X obj 22 110 q8_rsqrt~;
-#X obj 22 87 +~ 1e-20;
+#X obj 22 87 +~ 1e-020;
 #X obj 22 64 expr~ (pow ($v1 \, 2) + pow($v2 \, 2));
 #X text 86 86 Previne Divisão por Zero;
 #X text 78 145 = 1 / Magnitude-Amplitude (Z);
@@ -1112,8 +1112,8 @@ mesma.;
 0;
 #X obj 30 147 *~;
 #X obj 112 144 *~;
-#X obj 30 86 +~ 1e-15;
-#X obj 127 85 +~ 1e-15;
+#X obj 30 86 +~ 1e-015;
+#X obj 127 85 +~ 1e-015;
 #N canvas 116 92 267 162 magnitude 0;
 #X obj 14 14 inlet~;
 #X obj 200 14 inlet~;
@@ -1166,7 +1166,7 @@ phase relationships of the input.;
 #X connect 13 0 8 1;
 #X connect 13 0 2 1;
 #X restore 30 54 pd shift & lock;
-#X text 186 86 somar 1e-15 previne zeros;
+#X text 186 86 somar 1e-015 previne zeros;
 #X text 165 133 Normalizar Magnitude em 1;
 #X connect 2 0 8 0;
 #X connect 3 0 7 0;
@@ -1388,21 +1388,21 @@ a Magnitude igual a da Janela Atual.;
 #X obj 216 553 trigger bang float;
 #X obj 204 614 s \$0-set-freeze;
 #X msg 211 589 1;
-#X floatatom 510 200 5 0 0 0 - - -, f 5;
-#X obj 440 152 moses 1e-05;
+#X floatatom 510 200 5 0 0 0 - - -;
+#X obj 440 152 moses 1e-005;
 #X obj 502 177 moses;
 #X obj 529 152 r \$0-time-lenght;
 #X obj 149 365 f;
-#X floatatom 151 417 5 0 0 0 - - -, f 5;
+#X floatatom 151 417 5 0 0 0 - - -;
 #X obj 151 443 * 1000;
 #X obj 83 107 r \$0-freeze-it;
 #X obj 194 33 r \$0-Rev-Status;
 #X obj 82 205 f;
 #X obj 82 229 sel -1;
-#X floatatom 194 55 5 0 0 0 - - -, f 5;
+#X floatatom 194 55 5 0 0 0 - - -;
 #X msg 204 418 0;
 #X obj 198 118 f;
-#X floatatom 198 142 5 0 0 0 - - -, f 5;
+#X floatatom 198 142 5 0 0 0 - - -;
 #X obj 194 76 t f b;
 #X msg 129 523 0;
 #X obj 85 271 f;
@@ -1411,7 +1411,7 @@ a Magnitude igual a da Janela Atual.;
 #X obj 83 132 sel 0 1;
 #X obj 423 521 spigot;
 #X obj 444 352 f;
-#X floatatom 446 404 5 0 0 0 - - -, f 5;
+#X floatatom 446 404 5 0 0 0 - - -;
 #X obj 446 430 * 1000;
 #X obj 542 588 s \$0-loop-Loc;
 #X obj 432 564 trigger bang float;
@@ -1499,7 +1499,7 @@ a Magnitude igual a da Janela Atual.;
 #X obj 91 483 expr abs($f1);
 #N canvas 108 65 450 300 time 0;
 #X obj 195 29 r \$0-time-lenght;
-#X floatatom 185 57 5 0 0 0 - - -, f 5;
+#X floatatom 185 57 5 0 0 0 - - -;
 #X obj 171 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 225 148 s \$0-rcv-ph-slider;
@@ -1524,10 +1524,10 @@ a Magnitude igual a da Janela Atual.;
 #X msg 105 185 -1;
 #X obj 52 77 r \$0-rev-bang;
 #X obj 233 299 spigot;
-#X obj 267 275 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 267 275 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 296 313 spigot;
-#X obj 330 289 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 330 289 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 264 176 r \$0-RadioValue;
 #X obj 264 200 sel 0 1 2;
@@ -1606,9 +1606,9 @@ a Magnitude igual a da Janela Atual.;
 #X obj 82 226 f;
 #X obj 82 113 < 0;
 #X obj 82 144 sel 1;
-#X floatatom 216 123 5 0 0 0 - - -, f 5;
-#X obj 154 75 moses 1e-05;
-#X floatatom 82 251 5 0 0 0 - - -, f 5;
+#X floatatom 216 123 5 0 0 0 - - -;
+#X obj 154 75 moses 1e-005;
+#X floatatom 82 251 5 0 0 0 - - -;
 #X obj 82 274 * 1000;
 #X obj 216 100 moses;
 #X obj 243 75 r \$0-time-lenght;
@@ -1731,7 +1731,7 @@ a Magnitude igual a da Janela Atual.;
 #X obj 363 203 change;
 #X obj 313 504 / 4000;
 #X obj 312 527 + 0.5;
-#X floatatom 312 549 5 0 0 0 - - -, f 5;
+#X floatatom 312 549 5 0 0 0 - - -;
 #X obj 113 495 unpack s f;
 #X obj 173 547 / 400;
 #X obj 404 346 - 0.5;
@@ -1773,6 +1773,18 @@ a Magnitude igual a da Janela Atual.;
 #X obj 517 102 ktrl record_btn;
 #X obj 838 39 ktrl pse_btn;
 #X obj 833 455 s position-load;
+#X obj 1109 256 r k0;
+#X obj 1121 298 r k1;
+#X obj 1220 296 r k2;
+#X obj 1221 232 r k3;
+#X obj 1213 190 r k4;
+#X obj 1168 165 r k5;
+#X obj 1211 130 r k6;
+#X obj 1143 100 r k7;
+#X obj 1092 123 r k8;
+#X obj 1088 148 r k9;
+#X obj 1074 185 r k10;
+#X obj 1032 244 r k11;
 #X connect 4 0 3 1;
 #X connect 5 0 43 0;
 #X connect 5 1 39 0;
@@ -1843,20 +1855,31 @@ a Magnitude igual a da Janela Atual.;
 #X connect 106 0 107 0;
 #X connect 107 0 127 0;
 #X connect 109 0 110 0;
-#X connect 110 0 29 0;
 #X connect 111 0 112 0;
 #X connect 112 0 113 0;
 #X connect 113 0 114 0;
 #X connect 114 0 115 0;
+#X connect 128 0 93 0;
+#X connect 129 0 87 0;
+#X connect 130 0 81 0;
+#X connect 131 0 95 0;
+#X connect 132 0 98 0;
+#X connect 133 0 101 0;
+#X connect 134 0 103 0;
+#X connect 135 0 112 0;
+#X connect 136 0 110 0;
+#X connect 137 0 107 0;
+#X connect 138 0 89 0;
+#X connect 139 0 57 0;
 #X coords 0 1 100 -1 389 156 1 0 0;
 #X restore 100 114 graph;
 #N canvas 737 88 737 205 (subpatch) 0;
 #X obj 1 1 cnv 15 520 83 empty empty empty 20 12 0 14 -216373 -66577
 0;
 #X obj 7 9 hsl 445 33 0 60 0 0 \$0-snd-time-slider \$0-rcv-time-slider
-empty -2 -8 0 10 -195581 -1 -1 44400 1;
+empty -2 -8 0 10 -195581 -1 -1 0 1;
 #X obj 7 46 hsl 445 33 0 60 0 0 \$0-snd-ph-slider \$0-rcv-ph-slider
-empty -2 -8 0 10 -261234 -167937 -1 28739 1;
+empty -2 -8 0 10 -261234 -167937 -1 0 1;
 #X text 469 0 Real;
 #X text 470 37 PVoc;
 #N canvas 1142 377 201 444 (subpatch) 0;
@@ -1916,15 +1939,15 @@ empty -2 -8 0 10 -261234 -167937 -1 28739 1;
 #X coords 0 1 100 -1 522 85 1 0 0;
 #X restore 98 270 graph;
 #N canvas 1198 339 393 320 (subpatch) 0;
-#X obj 1 1 cnv 15 129 154 empty \$0-Pre-Cnv 4-Grave 5 26 0 14 -233017
+#X obj 1 1 cnv 15 129 154 empty \$0-Pre-Cnv 3-Lento 5 26 0 14 -233017
 -66577 0;
 #X obj 5 102 hradio 15 1 0 8 \$0-save-preset \$0-read-preset Salvar-Preset
-0 -8 0 10 -260187 -1 -1 3;
+0 -8 0 10 -260187 -1 -1 2;
 #X obj 105 135 bng 17 250 50 0 \$0-save-preset-bang \$0-PorraNingumis
 Save -4 -7 0 10 -231181 -1 -1;
 #X obj 5 60 hradio 15 1 0 8 \$0-read-preset \$0-get-preset Ler-Preset
-0 -8 0 10 -204786 -1 -1 3;
-#X symbolatom 10 158 14 0 0 0 - #0-Preset-Name #0-pre-name, f 14;
+0 -8 0 10 -204786 -1 -1 2;
+#X symbolatom 10 158 14 0 0 0 - #0-Preset-Name #0-pre-name;
 #X text 2 4 #;
 #X text 20 3 Nome:;
 #X text 0 70 _____________________;
@@ -1951,10 +1974,10 @@ Save -4 -7 0 10 -231181 -1 -1;
 -1 -1;
 #X obj 41 174 bng 15 250 50 0 \$0-recpv empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 324 219 5 0 0 0 - - -, f 5;
+#X floatatom 324 219 5 0 0 0 - - -;
 #X obj 324 194 expr ($f1 - 59) * 20;
 #X obj 208 122 expr (($f1 - 63) * 2) + 7;
-#X floatatom 249 170 5 0 0 0 - - -, f 5;
+#X floatatom 249 170 5 0 0 0 - - -;
 #X obj 208 193 s \$0-speed-preset;
 #X obj 208 83 ctlin 27 \$2;
 #X obj 323 156 ctlin 7 \$2;
@@ -2081,16 +2104,16 @@ Save -4 -7 0 10 -231181 -1 -1;
 #X obj 1342 106 s led;
 #X obj 349 621 r notes;
 #X obj 349 647 unpack;
-#X floatatom 349 676 5 0 0 0 - - -, f 5;
+#X floatatom 349 676 5 0 0 0 - - -;
 #X text 352 600 keyboard;
 #X obj 31 270 r vol;
-#X floatatom 911 448 5 0 0 0 - - -, f 5;
+#X floatatom 911 448 5 0 0 0 - - -;
 #X obj 592 200 s \$0-djfnskjnfksjdnkjsdnfks;
-#X floatatom 1072 568 5 0 0 0 - - -, f 5;
+#X floatatom 1072 568 5 0 0 0 - - -;
 #X obj 1070 539 * 128;
-#X floatatom 1176 559 5 0 0 0 - - -, f 5;
+#X floatatom 1176 559 5 0 0 0 - - -;
 #X obj 1174 530 * 128;
-#X floatatom 1300 567 5 0 0 0 - - -, f 5;
+#X floatatom 1300 567 5 0 0 0 - - -;
 #X obj 1327 495 * 128;
 #X msg 652 357 1:Pitch \$1;
 #X obj 655 380 s screenLine4;

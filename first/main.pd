@@ -1,4 +1,4 @@
-#N canvas 52 72 1163 548 10;
+#N canvas 220 102 1163 548 10;
 #X declare -path patch_editor_abs;
 #X obj 19 485 declare -path patch_editor_abs;
 #N canvas 447 23 707 551 patch-editor-do-not-delete 0;
