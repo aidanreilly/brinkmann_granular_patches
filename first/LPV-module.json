@@ -1,0 +1,24 @@
+{
+	"name" : "LPV",
+	"display" : "Live Phase Vocoder",
+	"parameters" : [
+		["bool", "frz", "Freeze", 0],
+		["int","preset","Presets",0,7,1],
+		["int","selector","OFF Loop Bounce",0,2,1],
+		["bool", "record_btn", "Record", 0],
+		["bool", "rewind_btn", "Rewind", 0],
+		["bool", "pse_btn", "Pause", 0],
+		["bool", "recl", "Record Loop", 0],
+		["bool", "lck", "Lock", 0],
+		["bool", "bnc_btn", "Bounce", 0],
+		["float","vol","Volume",0,1,0],
+		["float","transpo","Transposition",0,1,0],
+		["float","motion","Motion",0,1,0.51],
+		["float","position","Position",0,1,0]
+	],
+	"pages" : [
+		["pg_main1","Main 1",["vol", "selector","preset", "frz","record_btn", "rewind_btn","bnc_btn", "pse_btn"]],
+		["pg_main2","Main 2",["recl", "lck", "transpo", "frz", "record_btn", "rewind_btn","bnc_btn", "pse_btn"]],
+		["pg_main3","Main 3",["transpo", "motion", "position", "frz", "record_btn", "rewind_btn","bnc_btn", "pse_btn"]]
+	]
+}

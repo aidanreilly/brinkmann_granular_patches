@@ -1,0 +1,17 @@
+#N canvas 558 474 175 126 10;
+#N canvas 317 244 902 508 LPV 1;
+#X text 367 59 rewind;
+#X text 530 60 record;
+#X text 653 60 pause/continue;
+#X text 322 33 |------------------------- BANGS: -----------------------|
+;
+#X text 201 19 Audio IN;
+#X text 171 344 MONO;
+#X obj 205 79 LPVoc 3 2;
+#X obj 236 422 dac~;
+#X obj 206 39 adc~;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 8 0 6 0;
+#X connect 8 1 6 0;
+#X restore 30 32 pd LPV;
